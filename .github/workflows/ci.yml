@@ -23,7 +23,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           # Deploy
       ## Create deployment
-      - uses: whatever-company/deployment-action@master
+      - uses: whatever-company/deployment-action@v1.2
         name: Create GitHub deployment
         id: deployment
         with:
