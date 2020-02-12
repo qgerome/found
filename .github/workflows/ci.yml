@@ -27,6 +27,7 @@ jobs:
         name: Create GitHub deployment
         id: deployment
         with:
+          ref: ${{ github.ref }}
           run_id: ${{ github.run_id }}
           token: '${{ github.token }}'
           environment: qa
