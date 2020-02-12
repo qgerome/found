@@ -23,7 +23,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           # Deploy
       ## Create deployment
-      - uses: whatever-company/deployment-action@releases/v1
+      - uses: whatever-company/deployment-action@releases/v1.2
         name: Create GitHub deployment
         id: deployment
         with:
@@ -32,8 +32,9 @@ jobs:
 
       - name: Update deployment status (success)
         if: success()
-        uses: chrnorm/deployment-status@releases/v1
+        uses: whatever-company/deployment-status
         with:
           token: '${{ github.token }}'
           state: 'success'
+          environment_url: 'https://elium.com'
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
